@@ -1,7 +1,3 @@
 <Solution>
-  <Project Path="../Labarator1/Labarator1.csproj" />
-  <Project Path="../Labarator2/Labarator2.csproj" />
-  <Project Path="../Labarator3/Labarator3.csproj" />
-  <Project Path="../Labarator4/Labarator4.csproj" />
   <Project Path="ApplicationDesignLabs.csproj" />
 </Solution>
