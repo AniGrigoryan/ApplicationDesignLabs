@@ -83,6 +83,4 @@ namespace Labarator3
             }
         }
     }
-```
-
 }
