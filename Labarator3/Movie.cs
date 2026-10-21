@@ -10,62 +10,30 @@ namespace Labarator3
         Horror,
         Romance
     }
-public class Movie
+internal class Movie
     {
-        public int Number;
-        public string Title;
-        public int Year;
-        public Genre Genre;
-        public int Views;
-        public int Likes;
+        public int number;
+        public string name;
+        public int year;
+        public Genre genre;
+        public int views;
+        public int likes;
 
-        public Movie(int number, string title, int year, Genre genre, int views, int likes)
+        public double Rating()
         {
-            Number = number;
-            Title = title;
-            Year = year;
-            Genre = genre;
-            Views = views;
-            Likes = likes;
-        }
-
-        public double CalculateRating()
-        {
-            if (Views <= 0)
-                return 0;
-
-            return Math.Sqrt((double)Likes * Likes / Views);
+            return Math.Sqrt((double)likes * likes / views);
         }
 
         public override string ToString()
         {
-            return string.Format(
-                "{0,4}{1,-15}{2,-8}{3,-12}{4,8:F3}",
-                Number,
-                Title,
-                $"({Year})",
-                Genre,
-                CalculateRating()
+            return String.Format(
+                "{0,4}{1,-15}{2,-8}{3,-12}{4,8:0.000}",
+                number,
+                name,
+                "(" + year + ")",
+                genre,
+                Rating()
             );
-        }
-
-        public static Genre GetGenre(int genreNumber)
-        {
-            switch (genreNumber)
-            {
-                case 1:
-                    return Genre.Action;
-                case 2:
-                    return Genre.Comedy;
-                case 3:
-                    return Genre.Drama;
-                case 4:
-                    return Genre.Horror;
-                case 5:
-                    return Genre.Romance;
-                default:
-                    throw new ArgumentException("Genre must be between 1 and 5.");
-            }
         }
     }
 
